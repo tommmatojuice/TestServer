@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="kbftwbht@tyke.db.elephantsql.com" uuid="9ae954d5-d9cb-42b1-ad3b-7d52a4ddfe4c">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <remarks>user=&quot;kbftwbht&quot;,                                                
+password=&quot;LYRC4ctQmbtkglf33Jmtuns_2L8HpUwD&quot;,                                                
+host=&quot;tyke.db.elephantsql.com&quot;,                                                
+port=&quot;5432&quot;,                                                
+database=&quot;kbftwbht&quot;</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://tyke.db.elephantsql.com:5432/kbftwbht</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+  </component>
+</project>
