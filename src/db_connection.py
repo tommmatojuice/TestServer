@@ -19,7 +19,7 @@ class AppDb:
             self.create_table()
 
         except (Exception, Error) as error:
-            print("Server error", error)
+            print("Server connection error", error)
 
     def create_table(self):
         try:
@@ -32,28 +32,23 @@ class AppDb:
 
             self.cursor.execute(create_table_query)
             self.connection.commit()
-            print('Table was created')
 
         except (Exception, Error) as error:
-            print("Server error", error)
+            print("Error creating table", error)
 
     def insert_image(self, image: Image):
         try:
             insert_query = (f'INSERT INTO inbox(request_code, file_name, reg_date) '
                             f'VALUES (\'{image.request_code}\', \'{image.file_name}\', \'{image.reg_date}\')')
-            print(insert_query)
             self.cursor.execute(insert_query)
             self.connection.commit()
-            print("Row was successfully added")
 
         except (Exception, Error) as error:
-            print("Server error", error)
+            print("Error while inserting data", error)
 
     def get_images(self, request_code):
         try:
-            select_images_query = f'SELECT request_code, file_name, reg_date ' \
-                                  f'FROM inbox WHERE request_code = \'{request_code}\''
-            print(select_images_query)
+            select_images_query = f'SELECT * FROM inbox WHERE request_code = \'{request_code}\''
 
             self.cursor.execute(select_images_query)
             record = self.cursor.fetchall()
@@ -61,7 +56,7 @@ class AppDb:
             return record
 
         except (Exception, Error) as error:
-            print("Server error", error)
+            print("Error while getting data", error)
 
     def delete_images(self, request_code):
         try:
@@ -71,9 +66,4 @@ class AppDb:
             self.connection.commit()
 
         except (Exception, Error) as error:
-            print("Server error", error)
-
-
-if __name__ == '__main__':
-    db = AppDb()
-    print(db.get_images('1d018bf5-4adc-46ad-8245-3c0a555109bf'))
+            print("Error while deleting data", error)
