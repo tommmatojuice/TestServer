@@ -6,9 +6,9 @@ from minio.error import MinioException
 
 load_dotenv()
 
-ACCESS_KEY = 'admin1'
-SECRET_KEY = 'password1'
-MINIO_API_HOST = "localhost:9000"
+ACCESS_KEY = 'testserver_user'
+SECRET_KEY = 'testserver_pass'
+MINIO_API_HOST = '45.141.101.148:9000'
 
 
 class MinIO:

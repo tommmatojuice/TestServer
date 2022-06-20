@@ -11,7 +11,6 @@ class Image:
 
 
 class ImageOut(BaseModel):
-    image_id: int
     request_code: str
     file_name: str
     reg_date: datetime
